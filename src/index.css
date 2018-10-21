@@ -17,9 +17,16 @@ li {
   height: 5%;
 }
 
+label {
+	margin: 10px;
+	display: flex;
+	font-size: 18px;
+	color: rgba(0, 142, 198, 1);
+ }
+
 input {
   margin: 10px;
-  display: inline-block;
+  display: block;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -78,4 +85,9 @@ button:disabled {
 
 .error {
   color: red;
+}
+
+.form-field-block {
+	display: table;
+	margin: 0 auto;
 }

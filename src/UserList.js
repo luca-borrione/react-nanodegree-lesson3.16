@@ -35,7 +35,7 @@ class UserList extends React.Component {
 				</div>
 				<ol>
 					{this.props.users.map( (user, index) => (
-						<User key={Symbol(index).toString()}
+						<User key={index}
 							user = {user}
 							showNumGamesPlayed = {this.state.showNumGamesPlayed}
 						/>

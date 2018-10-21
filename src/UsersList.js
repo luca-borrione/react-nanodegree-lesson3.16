@@ -25,16 +25,14 @@ class UserList extends React.Component {
 	render() {
 		return (
 			<div>
-				{this.props.users.length > 0 && (
-					<div>
-						<h1>Users</h1>
-						<div className="form-field-block">
-							<button className="smallButton" onClick={this.toggleShowNumGamesPlayed}>
-								{this.getButtonLabel()}
-							</button>
-						</div>
+				<div>
+					<h1>Users</h1>
+					<div className="form-field-block">
+						<button className="smallButton" onClick={this.toggleShowNumGamesPlayed}>
+							{this.getButtonLabel()}
+						</button>
 					</div>
-				)}
+				</div>
 				<ol>
 					{this.props.users.map( (user, index) => (
 						<User key={Symbol(index).toString()}

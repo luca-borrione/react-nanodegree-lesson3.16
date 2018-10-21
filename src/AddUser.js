@@ -30,6 +30,18 @@ class AddUser extends React.Component {
 				}
 			};
 		});
+	};
+
+	/**
+	 * Creates a new user entry based on the input field values
+	 * adding any extra needed property with their default value
+	 * @returns {User}
+	 */
+	createUser() {
+		return {
+			...this.state.user,
+			numGamesPlayed: 0
+		}
 	}
 
 	onFormSubmit = event => {
@@ -40,7 +52,7 @@ class AddUser extends React.Component {
 				userExists: true
 			});
 		} else {
-			this.props.addUser(this.state.user);
+			this.props.addUser(this.createUser());
 			this.setState({
 				userExists: false
 			});

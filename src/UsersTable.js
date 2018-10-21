@@ -5,28 +5,31 @@ import UsersList from './UsersList';
 class UsersTable extends React.Component {
 
 	/**
-	 * @member	 {Object}				state
-	 * @property {Array.<Object>}		state.users							- list of users
-	 * @property {string}				state.users[].firstname			- user first name
-	 * @property {string}				state.users[].lastname			- user last name
-	 * @property {string}				state.users[].username			- user username
-	 * @property {number}				state.users[].numGamesPlayed	- number of games played by the user
-	 * 
+	 * @typedef	 {Object} User
+	 * @property {string} firstname			- user first name
+	 * @property {string} lastname			- user last name
+	 * @property {string} username			- user username
+	 * @property {number} numGamesPlayed	- number of games played by the user
+	 */
+
+	/**
+	 * @member	 {Object}		state
+	 * @property {Array.<User>} state.users	- list of users
 	 */
 	state = {
 		users: [],
-		showNumGamesPlayed: true
 	};
 
-	addUser = (user) => {
-		user.numGamesPlayed = 0;
-
+	/**
+	 * Appends a new user entry to the state users list
+	 * @param {User} user	- new user entry
+	 */
+	addUser = user => {
 		this.setState(state => {
 			return {
 				users: [...state.users, user]
 			};
 		});
-
 	};
 
 
@@ -37,13 +40,16 @@ class UsersTable extends React.Component {
 					addUser = {this.addUser}
 					users = {this.state.users}
 				/>
-
 				<br />
-				<hr />
 
-				<UsersList
-					users = {this.state.users}
-				/>
+				{this.state.users.length > 0 && (
+					<div>
+						<hr />
+						<UsersList
+							users = {this.state.users}
+						/>
+					</div>
+				)}
 			</div>
 		);
 	}

@@ -1,6 +1,6 @@
 import React from 'react';
 import AddUser from './AddUser';
-import UsersList from './UsersList';
+import UserList from './UserList';
 
 class UsersTable extends React.Component {
 
@@ -45,7 +45,7 @@ class UsersTable extends React.Component {
 				{this.state.users.length > 0 && (
 					<div>
 						<hr />
-						<UsersList
+						<UserList
 							users = {this.state.users}
 						/>
 					</div>

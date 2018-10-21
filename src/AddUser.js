@@ -78,7 +78,7 @@ class AddUser extends React.Component {
 				<h1>New User</h1>
 				<form onSubmit={this.onFormSubmit}>
 					{formFields.map((field, index) => (
-						<div key={Symbol(index).toString()} className="form-field-block">
+						<div key={index} className="form-field-block">
 							<label htmlFor={field.id}>{field.label}:</label>
 							<input type="text" id={field.id} name={field.id}
 								value = {this.state.user[field.id]}
